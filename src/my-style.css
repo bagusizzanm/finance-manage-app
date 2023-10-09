@@ -142,13 +142,13 @@ body {
 }
 
 .error-box {
-   color: crimson;
+   color: var(--color-outcome);
 }
 
 .error-box ul {
-   border: 1px solid crimson;
+   border: 1px solid var(--color-outcome);
    border-radius: 5px;
-   background-color: #fac5c5;
+   background-color: #ffdfdf;
 }
 
 .error-box p {

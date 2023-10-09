@@ -14,7 +14,7 @@ const Transaction = (props) => {
 								props.transactions.map((transaction) => (
 									(transaction.nominal > 0) &&
 									<ListTransaction key={transaction.id}
-										id={transaction.id} date={transaction.date} des={transaction.des} nominal={transaction.nominal}
+										id={transaction.id} date={transaction.date} des={transaction.des} nominal={transaction.nominal} onDelete={props.onDeleteTransaction}
 									/>
 								))
 							}
@@ -26,7 +26,7 @@ const Transaction = (props) => {
 								props.transactions.map((transaction) => (
 									(transaction.nominal <= 0) &&
 									<ListTransaction
-										key={transaction.id}
+										key={transaction.id} onDelete={props.onDeleteTransaction}
 										id={transaction.id} date={transaction.date} des={transaction.des} nominal={transaction.nominal}
 									/>
 								))

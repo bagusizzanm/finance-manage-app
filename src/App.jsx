@@ -4,6 +4,7 @@ import Footer from "./components/Footer"
 import Transaction from "./components/Transaction"
 import BalanceBox from "./components/BalanceBox"
 import AddTransaction from "./components/AddTransaction.jsx";
+import transaction from "./components/Transaction";
 
 const initTransactions = [
 	{
@@ -36,11 +37,23 @@ function App() {
 		setTranscation(newTransactions)
 	}
 	
+	const handleDeleteTransaction = (e) => {
+		// find the index to be deleted
+		const result = transactions.findIndex(
+			transction => transction.id === e.target.id
+		)
+		
+		// copy transactions to change the origin array (mutate) from splice function
+		const newTransaction = transactions
+		newTransaction.splice(result, 1)
+		setTranscation([...newTransaction])
+	}
+	
 	return (
 		<>
 			<Header/>
 			<BalanceBox transactions={transactions}/>
-			<Transaction transactions={transactions}/>
+			<Transaction transactions={transactions} onDeleteTransaction={handleDeleteTransaction}/>
 			<AddTransaction onAddTransactions={handleAddTransaction}/>
 			<Footer/>
 		</>

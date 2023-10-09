@@ -89,7 +89,6 @@ const AddTransaction = props => {
 			};
 			
 			props.onAddTransactions(transaction)
-			// console.log(transaction)
 			// empty the input
 			setFormInput({
 				dateForm: getTanggal(),
